@@ -1,4 +1,7 @@
 class ArticlesController < ApplicationController
+
+  USERS = {"eric" => "123"}
+  before_action :authenticate, only: [:destroy]
   def index
     @article = Article.all
   end
@@ -22,7 +25,7 @@ class ArticlesController < ApplicationController
   def update
     @article = Article.find(params[:id])
     if @article.update(article_params)
-        redirect_to @article
+        redirect_to @article, alert: "Update is successfully!"
     else
       render 'edit'
     end
@@ -30,11 +33,16 @@ class ArticlesController < ApplicationController
   def destroy
     @article = Article.find(params[:id])
     @article.destroy
-    redirect_to articles_path
+
+    redirect_to articles_path, alert: "Delete is successfully!"
   end
   private
     def article_params
       params.require(:article).permit(:title, :text)
     end
-
+    def authenticate
+       authenticate_or_request_with_http_digest do |username|
+        USERS[username]
+      end
+    end
 end
