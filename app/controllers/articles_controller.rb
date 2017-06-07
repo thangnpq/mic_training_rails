@@ -1,4 +1,6 @@
 class ArticlesController < ApplicationController
+  before_action :authenticate_user!
+
 
   USERS = {"eric" => "123"}
   before_action :authenticate, only: [:destroy]

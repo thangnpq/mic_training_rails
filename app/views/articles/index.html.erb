@@ -1,61 +1,57 @@
-<div>
-  <%= render 'layouts/header' %>
-
-  <% flash.each do |name, msg| -%>
-    <%= content_tag :div, msg, class: 'alert alert-success' %>
-  <% end -%>
-</div>
-<section>
-  <div class="banner">
-    <div class="container">
-      <h1> Wellcome my Blog</h1>
-       Free service for technical knowledge sharing<br>
-      Join us to find useful information required to perfect your skill
-      <br>
-      <br>
-    </div>
+<div class="articles">
+  <div>
+    <% flash.each do |name, msg| -%>
+      <%= content_tag :div, msg, class: 'alert alert-success' %>
+    <% end -%>
   </div>
-</section>
-<div class="container">
-
-<p class="btn btn-default">
-<%= link_to 'My Blog', controller: 'articles' %>
-</p>
-<p class="btn btn-default">
-  <%= link_to 'New article', new_article_path %>
-</p>
-
-
-<table class="table">
-  <tr>
-    <th style="text-align: center;">Title</th>
-    <th style="text-align: center;">Text</th>
-    <th colspan="3"></th>
-  </tr>
-  <% @article.each do |article| %>
-  <tr>
-    <td><%= article.title %></td>
-    <td><%= article.text %></td>
-    <td>
-      <%= link_to article_path(article) do %>
-        <i class="fa fa-eye" aria-hidden="true"></i>
-      <% end %>
-    </td>
-    <td><%= link_to edit_article_path(article) do %>
-      <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-      <% end %>
-    </td>
-    <td><%= link_to article_path(article), method: :delete, data: { confirm: 'Are you sure' } do %>
-    <i class="fa fa-trash" aria-hidden="true"></i>
-
-      <% end %>
-    </td>
-  </tr>
-  <% end %>
-</table>
+  <section>
+    <div class="banner">
+      <div class="container">
+        <p class="txt-banner">WELLCOME MY BLOG</p>
+      </div>
+    </div>
+  </section>
+  <div class="container">
 
 
 
 
+  <table class="table">
+    <tr>
+      <th style="text-align: center;">Title</th>
+      <th style="text-align: center;">Text</th>
+      <th colspan="3"></th>
+    </tr>
+    <% @article.each do |article| %>
+    <tr>
+      <td><%= article.title %></td>
+      <td><%= article.text %></td>
+      <td>
+        <%= link_to article_path(article) do %>
+          <i class="fa fa-eye" aria-hidden="true"></i>
+        <% end %>
+      </td>
+      <td><%= link_to edit_article_path(article) do %>
+        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+        <% end %>
+      </td>
+      <td><%= link_to article_path(article), method: :delete, data: { confirm: 'Are you sure' } do %>
+      <i class="fa fa-trash" aria-hidden="true"></i>
+
+        <% end %>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+
+    <div class="btn-bottom">
+      <p class="btn btn-primary btn-bot">
+       <%= link_to 'My Blog', controller: 'articles' %>
+      </p>
+      <p class="btn btn-primary btn-bot">
+        <%= link_to 'New article', new_article_path %>
+      </p>
+    </div>
+
+  </div>
 </div>
-<%= render 'layouts/footer' %>
