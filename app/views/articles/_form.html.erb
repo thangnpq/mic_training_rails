@@ -1,5 +1,4 @@
-
-      <%= form_for @article, html: {class: "form-group"} do |f| %>
+ <%= form_for @article, html: {class: "form-group"} do |f| %>
       <% if @article.errors.any? %>
         <div id="error_explanation">
             <h2>
@@ -9,7 +8,6 @@
             <ul>
               <% @article.errors.full_messages.each do |msg| %>
                 <li><%= msg %></li>
-
               <% end %>
             </ul>
         </div>
@@ -30,5 +28,4 @@
       <%= f.submit 'Create article', :class => 'btn btn-primary' %>
        <%= link_to 'Back', articles_path, class: 'btn btn-primary' %>
       </div>
-
-    <% end %>
+ <% end %>
