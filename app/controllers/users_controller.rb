@@ -12,15 +12,14 @@ class UsersController < ApplicationController
 
     if @user.update_attributes(user_params)
       flash[:notice] = "Your profile has been updated."
-      redirect_to action: :users
+      redirect_to :controller => 'articles', :action => 'index'
     else
          render "edit"
     end
 
-
   end
   private
     def user_params
-      params.require(:users).permit(:first_name, :last_name)
+      params.require(:user).permit(:first_name, :last_name, :address, :phone)
     end
 end

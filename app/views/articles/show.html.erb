@@ -10,10 +10,12 @@
             <strong>Text:</strong>
             <%= @article.text %>
           </p>
-          <p class="btn btn-default">
-             <%= link_to 'Edit', edit_article_path(@article) %>
-          </p>
-          <p class="btn btn-default">
+          <% if @article.user == current_user %>
+            <p class="btn btn-primary">
+               <%= link_to 'Edit', edit_article_path(@article) %>
+            </p>
+          <% end %>
+          <p class="btn btn-primary">
             <%= link_to 'Back', articles_path %>
           </p>
         <h3>Comments</h3>

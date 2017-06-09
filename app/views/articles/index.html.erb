@@ -1,8 +1,11 @@
 <div class="articles">
-  <div>
-      <% flash.each do |name, msg| -%>
-        <%= content_tag :div, msg, class: 'alert alert-success' %>
-      <% end -%>
+<div class="rows">
+
+</div>
+    <div>
+        <% flash.each do |name, msg| -%>
+          <%= content_tag :div, msg, class: 'alert alert-success' %>
+        <% end -%>
     </div>
     <section>
       <div class="banner">
@@ -23,17 +26,23 @@
           <td><%= article.title %></td>
           <td><%= article.text %></td>
           <td>
-            <%= link_to article_path(article) do %>
-              <i class="fa fa-eye" aria-hidden="true"></i>
-            <% end %>
+              <%= link_to article_path(article) do %>
+                <i class="fa fa-eye" aria-hidden="true"></i>
+               <% end %>
           </td>
-          <td><%= link_to edit_article_path(article) do %>
-            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+          <td>
+          <% if article.user == current_user %>
+            <%= link_to edit_article_path(article) do %>
+              <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
             <% end %>
+          <% end %>
           </td>
-          <td><%= link_to article_path(article), method: :delete, data: { confirm: 'Are you sure' } do %>
-          <i class="fa fa-trash" aria-hidden="true"></i>
+          <td>
+          <% if article.user == current_user %>
+            <%= link_to article_path(article), method: :delete, data: { confirm: '    Are you sure' } do %>
+                <i class="fa fa-trash" aria-hidden="true"></i>
             <% end %>
+           <% end %>
           </td>
         </tr>
         <% end %>

@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
   get 'edit_profile' => 'users#edit'
-  put 'profile' => 'users#update'
+  patch 'profile' => 'users#update'
+
   resources :articles do
     resources :comments
   end
