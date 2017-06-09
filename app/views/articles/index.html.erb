@@ -1,19 +1,9 @@
-<div class="articles">
     <div>
         <% flash.each do |name, msg| -%>
           <%= content_tag :div, msg, class: 'alert alert-success' %>
         <% end -%>
     </div>
-    <section>
-      <div class="banner">
-        <div class="container">
-          <p class="txt-banner">WELLCOME MY BLOG</p>
-        </div>
-      </div>
-    </section>
     <div class="container-fluid">
-      <div class="row content">
-          <div class="col-sm-9">
                <% @article.each do |article| %>
                  <div class="well box-content">
                     <ul>
@@ -37,26 +27,7 @@
                     </ul>
                   </div>
               <% end %>
-        </div>
-        <div class="col-sm-3 sidebar">
-              <div class="txt-li sidebar-top">
-                <ul>
-                  <li><a href="#">Home</a></li>
-                  <li><a href="#">Author</a></li>
-                  <li><a href="#">Tag</a></li>
-                  <li><button class="btn btn-primary">Subscribe</button></li>
-                </ul>
-              </div>
-              <div class="txt-li sidebar-bot">
-                <ul>
-                  <li><a href="#">Home</a></li>
-                  <li><a href="#">Author</a></li>
-                  <li><a href="#">Tag</a></li>
-                  <li><button class="btn btn-primary">Subscribe</button></li>
-                </ul>
-              </div>
-          </div>
-      </div>
+
       <div class="btn-bottom">
         <p class="btn btn-primary btn-bot">
          <%= link_to 'My Blog', controller: 'articles' %>
@@ -65,5 +36,4 @@
           <%= link_to 'New article', new_article_path %>
         </p>
       </div>
-  </div>
 </div>

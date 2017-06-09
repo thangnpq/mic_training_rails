@@ -12,7 +12,13 @@
   <body>
     <%= render 'layouts/header' %>
     <div class="container">
-      <%= yield %>
+         <%= render 'layouts/banner' %>
+        <div class="col-sm-9">
+            <%= yield %>
+        </div>
+        <div class="mg-top-30 col-sm-3">
+          <%= render 'layouts/box' %>
+        </div>
     </div>
     <%= render 'layouts/footer' %>
   </body>
