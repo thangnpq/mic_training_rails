@@ -58,5 +58,6 @@ gem 'simple_form'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
-gem "font-awesome-rails"
+gem 'font-awesome-rails'
 gem 'devise'
+gem 'paperclip', '~> 5.0.0'

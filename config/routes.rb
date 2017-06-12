@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   get 'edit_profile' => 'users#edit'
   patch 'profile' => 'users#update'
+  get 'search' => 'home#search'
 
   resources :articles do
     resources :comments

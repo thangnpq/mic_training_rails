@@ -1,9 +1,8 @@
 class ArticlesController < ApplicationController
-  before_action :authenticate_user!
 
   def index
-    @article = Article.all
-    @article = Article.all.order("created_at DESC")
+    @articles = Article.all
+    @articles = Article.all.order("created_at DESC")
 
   end
 
@@ -50,6 +49,6 @@ class ArticlesController < ApplicationController
 
   private
   def article_params
-    params.require(:article).permit(:title, :text)
+    params.require(:article).permit(:title, :text, :image)
   end
 end

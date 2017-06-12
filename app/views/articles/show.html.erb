@@ -1,11 +1,12 @@
 <div class="show-art">
     <div class="show-page">
-         <p>
-            <strong>Title:</strong>
+        <div id="image-show">
+            <%= image_tag @article.image %>
+        </div>
+         <p id="title-content-show">
             <%= @article.title %>
           </p>
           <p>
-            <strong>Text:</strong>
             <%= @article.text %>
           </p>
           <% if @article.user == current_user %>
