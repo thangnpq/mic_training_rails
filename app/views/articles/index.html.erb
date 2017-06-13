@@ -11,14 +11,14 @@
                       </div>
                      <div>
                         <li class="title-content">
-                         <%= article.title %>
+                         <%= truncate(article.title,:length => 100, :seperator => '...') %>
                         </li>
 
                         <li>
-                              <%= truncate(article.text,:length => 400, :seperator => '...' )%>
+                              <%= truncate(article.text,:length => 300, :seperator => '...' )%>
                          </li>
 
-                        <li>
+                        <li class="mg-top-10">
                           <%= link_to article_path(article) do %>
                             <button class="btn btn-primary">Read More</button>
                           <% end %>
@@ -43,8 +43,10 @@
         <p class="btn btn-primary btn-bot">
          <%= link_to 'My Blog', controller: 'articles' %>
         </p>
-        <p class="btn btn-primary btn-bot">
-          <%= link_to 'New article', new_article_path %>
-        </p>
+         <% if user_signed_in? %>
+          <p class="btn btn-primary btn-bot">
+            <%= link_to 'New article', new_article_path %>
+          </p>
+          <% end %>
       </div>
 </div>
