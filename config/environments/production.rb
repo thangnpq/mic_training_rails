@@ -31,6 +31,7 @@ Rails.application.configure do
   config.assets.compile = true
   config.serve_static_assets = true  # deprecated
   config.serve_static_files = true
+  config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect'
 
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
