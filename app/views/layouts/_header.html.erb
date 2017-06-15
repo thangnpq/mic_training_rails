@@ -1,32 +1,37 @@
-<div class="articles">
-  <div class="nav">
-    <div class="nav-left pull-left navbar-nav">
-      <ul class="navbar-nav nav-ul-left">
-        <li class="nav-item"><a class="link-nav" href="/articles">Post</a></li>
-        <li class="nav-item"><a class="link-nav" href="#">Author</a></li>
-        <li class="nav-item"><a class="link-nav" href="#">Tags</a></li>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-left nav navbar-nav">
+        <li class="active">
+         <a href="/articles">Post</a>
+        </li>
+        <li><a href="#">Tags</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
       </ul>
-    </div>
-    <div class="collapse navbar-collapse pull-right nav-right">
-      <ul class="navbar-nav nav-ul-right">
-        <li>
-          <a href="#">Menu</a>
-          <ul class="sub-menu">
-            <% if user_signed_in? %>
-              <li>
-               <%= link_to('Edit Profile', edit_profile_path )%>
-              </li>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Menu <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+           <% if user_signed_in? %>
               <li>
                <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+              </li>
+              <li>
+               <%= link_to('Edit Profile', edit_profile_path )%>
               </li>
               <% else %>
               <li>
               <%= link_to('Login', new_user_session_path)  %>
               </li>
             <% end %>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Help</a></li>
           </ul>
         </li>
       </ul>
     </div>
   </div>
-</div>
+</nav>

@@ -20,7 +20,7 @@
 
                         <li class="mg-top-10">
                           <%= link_to article_path(article) do %>
-                            <button class="btn btn-primary">Read More</button>
+                            <button class="btn btn-info txt-btn">Read More</button>
                           <% end %>
 
                           <% if article.user == current_user %>
@@ -40,11 +40,11 @@
               <% end %>
 
       <div class="btn-bottom">
-        <p class="btn btn-primary btn-bot">
+        <p class="btn btn-info btn-bot txt-btn">
          <%= link_to 'My Blog', controller: 'articles' %>
         </p>
          <% if user_signed_in? %>
-          <p class="btn btn-primary btn-bot">
+          <p class="btn btn-info btn-bot txt-btn">
             <%= link_to 'New article', new_article_path %>
           </p>
           <% end %>

@@ -30,7 +30,6 @@ Rails.application.configure do
   # Do not fallback to assets pipeline if a precompiled asset is missed.
   config.assets.compile = true
   config.serve_static_assets = true  # deprecated
-  config.serve_static_files = true
   config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect'
 
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
@@ -91,4 +90,15 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  # config/environments/production.rb
+  config.paperclip_defaults = {
+   :storage => :s3,
+   :s3_credentials => {
+     :access_key_id => 'AKIAJ4VHB4CEUUCCN2GQ',
+     :secret_access_key => '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'
+   },
+   :bucket => 'open.cdn',
+   :s3_host_name => 's3-ap-southeast-1.amazonaws.com'
+  }
 end

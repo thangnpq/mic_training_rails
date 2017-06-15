@@ -1,23 +1,122 @@
     <div class="txt-li sidebar-top">
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Author</a></li>
-          <li><a href="#">Tag</a></li>
           <%= form_tag search_path, :method => 'get', :class => 'form-group' do %>
             <p>
-              <h5 style="color: #000;font-weight: bold;">Search articles:</h5>
+              <h5 class="txt-sidebar" ">Search articles:</h5>
               <%= text_field_tag :search, params[:search],placeholder: "Search...", class: "form-control" %>
               <br>
-              <%= submit_tag "Search", :name => nil, class: "btn btn-primary" %>
+              <%= submit_tag "Search", :name => nil, class: "btn btn-info txt-btn" %>
             </p>
           <% end %>
-        </ul>
+    </div>
+    <div class="txt-li sidebar-mid">
+        <h4 class="txt-sidebar">Subscribe And Follow</h4>
+          <div>
+              <%= image_tag("fb.png", :alt => "facebook") %>
+               <%= image_tag("twitter.png", :alt => "twitter") %>
+                <%= image_tag("google.png", :alt => "google") %>
+                 <%= image_tag("youtube.png", :alt => "youtube") %>
+          </div>
+          <p>
+            <form class="form-group">
+              <input class="form-control" type="text" name="" placeholder="Enter your email address">
+            </form>
+          </p>
+           <button class="btn btn-info txt-btn">Subscribe</button>
       </div>
-      <div class="txt-li sidebar-bot">
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Author</a></li>
-          <li><a href="#">Tag</a></li>
-          <li><button class="btn btn-primary">Subscribe</button></li>
-        </ul>
+
+      <div class="sidebar-bot">
+        <h4 class="txt-sidebar">Popular Post</h4>
+                <ul class="nav nav-tabs">
+                  <li class="nav active"><a href="#popular" data-toggle="tab">Popular</a></li>
+                  <li class="nav"><a href="#archine" data-toggle="tab">Archine</a></li>
+                  <li class="nav"><a href="#recent" data-toggle="tab">Recent</a></li>
+                </ul>
+              <div class="tab-content">
+                 <div class="tab-pane fade in active" id="popular">
+                     <table class="table table-striped txt-table">
+                        <tr>
+                          <td>
+                          <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                            <a href="#">The .table-striped class </a>
+                          </td>
+                        </tr>
+                       <tr>
+                          <td class="active">
+                            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                            <a href="#">The .table-striped class </a>
+                          </td>
+                        </tr>
+                       <tr>
+                          <td>
+                             <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                            <a href="#">The .table-striped class </a>
+                          </td>
+                       </tr>
+                       <tr>
+                        <td class="active">
+                          <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                          <a href="#">The .table-striped class </a>
+                        </td>
+                      </tr>
+                     </table>
+                 </div>
+                 <div class="tab-pane fade" id="archine">
+                   <table class="table table-striped txt-table">
+                        <tr>
+                          <td>
+                          <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                            <a href="#">The .table-striped class </a>
+                          </td>
+                        </tr>
+                       <tr>
+                          <td class="active">
+                            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                            <a href="#">The .table-striped class </a>
+                          </td>
+                        </tr>
+                       <tr>
+                          <td>
+                             <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                            <a href="#">The .table-striped class </a>
+                          </td>
+                       </tr>
+                       <tr>
+                        <td class="active">
+                          <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                          <a href="#">The .table-striped class </a>
+                        </td>
+                      </tr>
+                     </table>
+                 </div>
+                 <div class="tab-pane fade" id="recent">
+                   <table class="table table-striped txt-table">
+                        <tr>
+                          <td>
+                          <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                            <a href="#">The .table-striped class </a>
+                          </td>
+                        </tr>
+                       <tr>
+                          <td class="active">
+                            <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                            <a href="#">The .table-striped class </a>
+                          </td>
+                        </tr>
+                       <tr>
+                          <td>
+                             <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                            <a href="#">The .table-striped class </a>
+                          </td>
+                       </tr>
+                       <tr>
+                        <td class="active">
+                          <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                          <a href="#">The .table-striped class </a>
+                        </td>
+                      </tr>
+                     </table>
+                 </div>
+              </div>
+
+
       </div>
