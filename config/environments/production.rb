@@ -91,12 +91,11 @@ Rails.application.configure do
   # config/environments/production.rb
   config.paperclip_defaults = {
     :storage => :s3,
-      :s3_region => 'us-east-1',
-      :s3_credentials => {
-       :access_key_id => 'AKIAJ4VHB4CEUUCCN2GQ',
-       :secret_access_key => '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'
-      },
-      :bucket => 'open.cdn',
-      :url => ':s3_domain_url'
+    :s3_credentials => {
+     :access_key_id => 'AKIAJ4VHB4CEUUCCN2GQ',
+     :secret_access_key => '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'
+    },
+    :bucket => 'open.cdn',
+    :url => ':s3_domain_url'
   }
 end
