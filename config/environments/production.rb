@@ -97,6 +97,9 @@ Rails.application.configure do
       secret_access_key: ENV.fetch('AWS_SECRET_ACCESS_KEY'),
       s3_region: ENV.fetch('AWS_REGION'),
     },
-    :s3_host_name => 's3-ap-southeast-1.amazonaws.com'
+    :s3_host_name => 's3-ap-southeast-1.amazonaws.com',
+    :s3_host_alias => 'cdn.trangtrinhaxinh.vn',
+    :path => ":class/:attachment/:id_partition/:style/:filename",
+    :url => ':s3_alias_url'
   }
 end
