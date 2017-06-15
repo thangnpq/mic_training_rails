@@ -63,3 +63,4 @@ gem 'devise'
 gem 'paperclip', '~> 5.0.0'
 gem 'rails_stdout_logging'
 gem 'rails_12factor', group: :production
+gem 'aws-sdk', '~> 2'
